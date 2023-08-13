@@ -54,4 +54,15 @@ El proyecto sigue la estructura estándar de una aplicación Spring Boot, siguie
 
 Esta estructura modular y organizada facilita el desarrollo y mantenimiento del proyecto, siguiendo las mejores prácticas de diseño en una arquitectura MVC. Cada componente cumple su función específica, lo que mejora la legibilidad y extensibilidad del código.
 
+## Rutas de la API
+
+La aplicación estará disponible en `http://localhost:8080`. Puedes probar los siguientes endpoints utilizando una herramienta para realizar peticiones HTTP (por ejemplo, Postman):
+
+- **GET /api/employees**: Obtener todos los empleados.
+- **GET /api/employees/{id}**: Obtener un empleado por su ID.
+- **POST /api/employees**: Crear un nuevo empleado (debes proporcionar los datos en el cuerpo de la petición).
+- **PUT /api/employees/{id}**: Actualizar un empleado existente (debes proporcionar los datos actualizados en el cuerpo de la petición).
+- **DELETE /api/employees/{id}**: Eliminar un empleado por su ID.
+
+
 
