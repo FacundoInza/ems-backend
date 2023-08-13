@@ -23,3 +23,17 @@ Sigue estos pasos para ejecutar el proyecto:
 
    ```bash
    mvn clean install
+   
+# Configuración de la Base de Datos
+
+1. Abre el archivo `application.properties` en la carpeta `src/main/resources`.
+
+2. Modifica la configuración de la base de datos según tus necesidades (nombre de usuario, contraseña y URL de conexión).
+
+# Compilación del Proyecto
+
+Para compilar el proyecto, abre una terminal en la raíz del proyecto y ejecuta el siguiente comando:
+
+```bash
+mvn clean install
+
