@@ -1,4 +1,4 @@
-package spring.api.emsbackend.conttroller;
+package spring.api.emsbackend.controller;
 
 
 import lombok.AllArgsConstructor;
@@ -8,11 +8,12 @@ import org.springframework.web.bind.annotation.*;
 import spring.api.emsbackend.dto.EmployeeDto;
 import spring.api.emsbackend.service.EmployeeService;
 
+import java.util.List;
+
 @AllArgsConstructor
 @RestController
 @RequestMapping("/api/employees")
 public class EmployeeController {
-
 
     private EmployeeService employeeService;
 
@@ -28,5 +29,26 @@ public class EmployeeController {
         EmployeeDto employeeDto = employeeService.getEmployeeById(employeeId);
         return ResponseEntity.ok(employeeDto);
     }
+    // Build get all employees rest api
+    @GetMapping
+    public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
+       List<EmployeeDto> employeeDtoList = employeeService.getAllEmployees();
+
+       return ResponseEntity.ok(employeeDtoList);
+    }
+
+    @PutMapping("{id}")
+    public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable("id") Long employeeId ,
+                                                      @RequestBody EmployeeDto updatedEmployee) {
+        EmployeeDto employeeDto = employeeService.updateEmployee(employeeId, updatedEmployee);
+        return ResponseEntity.ok(employeeDto);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteEmployee(@PathVariable("id") Long employeeId){
+        employeeService.deleteEmployee(employeeId);
+        return ResponseEntity.ok("Employee deleted successfully!.");
+    }
+
 
 }
